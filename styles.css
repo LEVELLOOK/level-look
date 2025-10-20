@@ -6,8 +6,8 @@ body {
 }
 
 header {
-  background-color: #222;
-  color: white;
+  background-color: black;
+  color: beige;
   text-align: center;
   padding: 1.5rem;
 }
@@ -33,7 +33,7 @@ header {
 }
 
 .producto {
-  background-color: white;
+  background-color: beige;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
