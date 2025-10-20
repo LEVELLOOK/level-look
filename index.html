@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVEL LOOK</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>LEVEL LOOK</h1>
+    <p>"Eleva tu estilo. Viste con intencion"</p>
+  </header>
+
+  <section class="filtros">
+    <label for="categoria">Categoría:</label>
+    <select id="categoria" onchange="filtrarProductos()">
+      <option value="todos">Todos</option>
+      <option value="hombre">Hombre</option>
+      <option value="mujer">Mujer</option>
+      <option value="infantil">Infantil</option>
+    </select>
+
+    <label for="color">Color:</label>
+    <select id="color" onchange="filtrarProductos()">
+      <option value="todos">Todos</option>
+      <option value="negro">Negro</option>
+      <option value="blanco">Blanco</option>
+      <option value="rojo">Rojo</option>
+      <option value="beige">beige</option>
+      <option value="verde-oliva">verde oliva</option>
+    </select>
+  </section>
+
+  <section class="catalogo" id="catalogo">
+    <div class="producto" data-categoria="hombre" data-color="negro">
+      <img src="camisa.jpg" alt="Camisa casual">
+      <h2>Camisa Casual</h2>
+      <p class="precio">$. 5</p>
+      <p>Tallas: S, M, L</p>
+      <p class="agotado">❌ Agotado (0)</p>
+    </div>
+
+    <div class="producto" data-categoria="mujer" data-color="verde-oliva">
+      <img src="vestido.jpg" alt="Vestido elegante">
+      <h2>Vestido Elegante</h2>
+      <p class="precio">$. 5</p>
+      <p>Tallas: S, M</p>
+      <p class="agotado">❌ Agotado (0)</p>
+    </div>
+
+    <div class="producto" data-categoria="infantil" data-color="beige">
+      <img src="pantalon.jpg" alt="Pantalón infantil">
+      <h2>Pantalón Infantil</h2>
+      <p class="precio">$. 5</p>
+      <p>Tallas: XS, S</p>
+      <p class="agotado">❌ Agotado (0)</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>📲 Contáctanos por WhatsApp: <a href="https://wa.me/message/NAJ7YOCAYP6DB1">Level Look</a></p>
+    
+  </footer>
+
+  <script>
+    function filtrarProductos() {
+      const categoria = document.getElementById('categoria').value;
+      const color = document.getElementById('color').value;
+      const productos = document.querySelectorAll('.producto');
+
+      productos.forEach(producto => {
+        const cat = producto.getAttribute('data-categoria');
+        const col = producto.getAttribute('data-color');
+
+        const coincideCategoria = (categoria === 'todos' || cat === categoria);
+        const coincideColor = (color === 'todos' || col === color);
+
+        producto.style.display = (coincideCategoria && coincideColor) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
