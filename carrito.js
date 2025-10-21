@@ -48,27 +48,4 @@ function eliminarDelCarrito(index) {
   actualizarCarrito();
 }
 
-function generarMensajeWhatsApp() {
-  if (carrito.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
-  }
-
-  let mensaje = "Hola, ya tengo mi pedido listo:\n\n";
-  let total = 0;
-
-  carrito.forEach((item) => {
-    mensaje += `• ${item.nombre} - $${item.precio.toFixed(2)}\n`;
-    total += item.precio;
-  });
-
-  mensaje += `\nTotal: $${total.toFixed(2)}\n`;
-  mensaje += "\n¿Está disponible?";
-
-  const numero = "584263538778"; // ← Cambia esto por tu número de WhatsApp
-  const url = `https://wa.me/message/NAJ7YOCAYP6DB1?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
-}
-
-botonWhatsApp.addEventListener("click", generarMensajeWhatsApp);
 
