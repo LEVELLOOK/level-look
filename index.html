@@ -19,32 +19,29 @@
       <option value="todos">Todos</option>
       <option value="hombre">Hombre</option>
       <option value="mujer">Mujer</option>
-      <option value="infantil">Infantil</option>
+      <option value="niño">Niño</option>
+      <option value="niña">Niña</option>
     </select>
 
-    <label for="color">Color:</label>
-    <select id="color" onchange="filtrarProductos()">
+    <label for="diseño">diseño:</label>
+    <select id="diseño" onchange="filtrarProductos()">
       <option value="todos">Todos</option>
-      <option value="negro">Negro</option>
-      <option value="blanco">Blanco</option>
-      <option value="rojo">Rojo</option>
-      <option value="beige">beige</option>
-      <option value="verde-oliva">verde oliva</option>
-      <option value="rosa">rosa</option>
+      <option value="vestidos">vestidos</option>
+      <option value="tops">tops</option>
     </select>
   </section>
 
   <section class="catalogo" id="catalogo">
-    <div class="producto" data-categoria="infantil" data-color="blanco">
+    <div class="producto" data-categoria="niña" data-diseño="tops">
       <img src="croptopjuvenil.jpg" alt="Croptop Juvenil">
       <h2 class="ropas">Croptop Juvenil</h2>
       <p class="precio">$4 </p>
       <p class="ropas">Tallas: 14, 16 </p>
-      <p class="pocas-unidades">⚠️ Pocas unidades (5)</p>
+      <p class="agotado">❌ Agotado (0)</p>
       <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
-    <div class="producto" data-categoria="infantil" data-color="rosa">
+    <div class="producto" data-categoria="niña" data-diseño="vestidos">
       <img src="Vestidoblueberi.jpg" alt="Vestido casual de niña">
       <h2 class="ropas">Vestido casual de niña</h2>
       <p class="precio">$8 </p>
@@ -53,7 +50,7 @@
       <button onclick="agregarAlCarrito(this)">Agregar al carrito</button>
     </div>
 
-    <div class="producto" data-categoria="infantil" data-color="rosa">
+    <div class="producto" data-categoria="niña" data-diseño="vestidos">
       <img src="BYBYGirl.jpg" alt="Vestido casual BYBYGirl">
       <h2 class="ropas">Vestido casual BYBYGirl</h2>
       <p class="precio">$8 </p>
@@ -71,6 +68,7 @@
   </section
 
   <footer>
+    
     <p>📲 Contáctanos por WhatsApp: <a href="https://wa.me/message/NAJ7YOCAYP6DB1">Level Look</a></p>
     
   </footer>
@@ -78,17 +76,17 @@
   <script>
     function filtrarProductos() {
       const categoria = document.getElementById('categoria').value;
-      const color = document.getElementById('color').value;
+      const diseño = document.getElementById('diseño').value;
       const productos = document.querySelectorAll('.producto');
 
       productos.forEach(producto => {
         const cat = producto.getAttribute('data-categoria');
-        const col = producto.getAttribute('data-color');
+        const dis = producto.getAttribute('data-diseño');
 
         const coincideCategoria = (categoria === 'todos' || cat === categoria);
-        const coincideColor = (color === 'todos' || col === color);
+        const coincidediseño = (diseño === 'todos' || dis === diseño);
 
-        producto.style.display = (coincideCategoria && coincideColor) ? 'block' : 'none';
+        producto.style.display = (coincideCategoria && coincidediseño) ? 'block' : 'none';
       });
     }
   </script>
