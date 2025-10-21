@@ -2,12 +2,12 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #7e7b74;
 }
 
 header {
-  background-color: black;
-  color: beige;
+  background-color: #c97c5d;
+  color: #d8cbb3;
   text-align: center;
   padding: 1.5rem;
 }
@@ -33,7 +33,7 @@ header {
 }
 
 .producto {
-  background-color: beige;
+  background-color: #c97c5d;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
@@ -46,6 +46,9 @@ header {
   width: 100%;
   height: auto;
   border-radius: 4px;
+}
+.ropas {
+  color:#d8cbb3
 }
 
 .precio {
