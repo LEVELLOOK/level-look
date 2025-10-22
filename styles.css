@@ -97,7 +97,7 @@ body {
   border-radius: 4px;
 }
 .ropas {
-  color:#556b2f;
+  color:#333;
   animation: fadeIn 2s ease-in;
   
 }
@@ -153,4 +153,5 @@ footer {
   margin: 2rem;
   border-top: 2px solid #ccc;
   border-radius: 8px;
+   animation: fadeIn 2s ease-in;
 }
