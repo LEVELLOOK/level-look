@@ -1,15 +1,64 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Playfair Display', serif;
   margin: 0;
-  padding: 0;
-  background-color: #7e7b74;
+  background-color: #f5f5dc;
+  color: #333;
+  text-align: center;
 }
 
-header {
+.store-header {
   background-color: #c97c5d;
-  color: #d8cbb3;
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0)}
+}
+
+.store-title{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #556b2f;
+  margin: 0;
+  animation: fadeSlide 1.5s ease-out;
+}
+
+.store-main{
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+.slogan{
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #556b2f;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0;}
+  to { transform: translateY(0); opacity: 1;}
+}
+
+.construccion{
+  font-size: 1em;
+  color: #556b2f;
+  margin-top: 10px;
   text-align: center;
-  padding: 1.5rem;
+  animation: slideUp 1.5s ease-out;
+}
+
+.whatsapp-link{
+  font-size: 2rem;
+  color: #25d366;
+  text-decoration: none;
+  text-align: left;
 }
 
 .filtros {
@@ -17,7 +66,7 @@ header {
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
-  background-color: #eee;
+  background-color: #f5f5dc;
 }
 
 .filtros label {
@@ -48,27 +97,33 @@ header {
   border-radius: 4px;
 }
 .ropas {
-  color:#d8cbb3
+  color:#556b2f;
+  animation: fadeIn 2s ease-in;
+  
 }
 
 .precio {
   font-weight: bold;
   color: #333;
+   animation: fadeIn 2s ease-in;
 }
 
 .disponible {
   color: green;
   font-weight: bold;
+   animation: fadeIn 2s ease-in;
 }
 
 .pocas-unidades {
   color: orange;
   font-weight: bold;
+   animation: fadeIn 2s ease-in;
 }
 
 .agotado {
   color: red;
   font-weight: bold;
+   animation: fadeIn 2s ease-in;
 }
 
 footer {
@@ -89,6 +144,8 @@ footer {
     align-items: center;
   }
 }
+
+
 
 .carrito {
   background-color: #c97c5d;
